@@ -4,7 +4,7 @@ Log provides a way to log stuff to the console and to file. It provides the meth
 
 ## Example
 
-This creates a file log output in the default logs directory (`path/to/application-support-dir/Logs`) with a name containing the current month and year (e.g. `18-10` for October 2018).
+This creates a file log output in the default logs directory (`path/to/application-support-dir/Logs`) with a name containing the current month and year (e.g. `log-2018-10.txt` for October 2018).
 
 ```swift
 guard let dirURL = Logging.defaultLogsDirectoryURL() else {
