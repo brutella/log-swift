@@ -11,12 +11,12 @@ import Foundation
 fileprivate let _fileManager = FileManager()
 public var LogDirectoryName = "Logs"
 
-public struct Log {
+public struct Logging {
     
     /// The list is sorted ascending by file creation date.
     ///
     /// - Returns: A list of file urls containing application logs.
-    public static var logFileURLs: [URL]?  {
+    public static var fileURLs: [URL]?  {
         guard let logsDir = defaultLogsDirectoryURL()  else {
             return nil
         }

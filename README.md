@@ -7,7 +7,7 @@ Log provides a way to log stuff to the console and to file. It provides the meth
 This creates a file log output in the default logs directory (`path/to/application-support-dir/Logs`) with a name containing the current month and year (e.g. `18-10` for October 2018).
 
 ```swift
-guard let dirURL = Log.defaultLogsDirectoryURL() else {
+guard let dirURL = Logging.defaultLogsDirectoryURL() else {
 	Swift.print("Logs directory not found")
 	return
 }
@@ -42,7 +42,7 @@ The following example uses the last 2 log files and attaches them to a mail comp
 
 ```swift
 let mailController = MFMailComposeViewController()
-if let urls = Log.logFileURLs { // returns the log files sorted by the creation date
+if let urls = Logging.fileURLs { // returns the log files sorted by the creation date
 	let fileManager = FileManager()
 	for url in urls.prefix(2) {
 		guard let data = fileManager.contents(atPath: url.path) else {
