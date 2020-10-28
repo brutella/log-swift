@@ -14,7 +14,8 @@ public func print(_ string: String,
                   file: String = #file,
                   function: String = #function,
                   line: Int = #line) {
-    Logger.sharedInstance.log(prefix() + ": \(file): \(function): \(line): " + string)
+    let name = URL(fileURLWithPath: file).lastPathComponent
+    Logger.sharedInstance.log(prefix() + ": \(name): \(function): \(line): " + string)
 }
 
 var _dateFormatter: DateFormatter?
