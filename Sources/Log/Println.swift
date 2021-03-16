@@ -10,8 +10,12 @@ import Foundation
 
 // Send all messages to the shared logger instance
 // The prefix is the current timestamp
-public func print(_ string: String) {
-    Logger.sharedInstance.log(prefix() + ": " + string)
+public func print(_ string: String,
+                  file: String = #file,
+                  function: String = #function,
+                  line: Int = #line) {
+    let name = URL(fileURLWithPath: file).lastPathComponent
+    Logger.sharedInstance.log(prefix() + ": \(name): \(function): \(line): " + string)
 }
 
 var _dateFormatter: DateFormatter?
